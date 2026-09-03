@@ -1,33 +1,6 @@
 <![CDATA[<div align="center">
 
 # 🚀 DevFlow
-
-### AI-Assisted Software Development & Project Management Platform
-
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![Express](https://img.shields.io/badge/Express_4-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![Vite](https://img.shields.io/badge/Vite_8-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS_4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-
-<p align="center">
-  <strong>An enterprise-grade project management platform with AI-powered task automation, drag-and-drop Kanban boards, real-time analytics, and role-based access control.</strong>
-</p>
-
-<p align="center">
-  <a href="#-features">Features</a> •
-  <a href="#%EF%B8%8F-tech-stack">Tech Stack</a> •
-  <a href="#-getting-started">Getting Started</a> •
-  <a href="#-api-documentation">API Docs</a> •
-  <a href="#-database-schema">Database</a> •
-  <a href="#-project-structure">Structure</a>
-</p>
-
----
-
-</div>
-
 ## ✨ Features
 
 ### 🎯 Project & Task Management
