@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* ================================================
+   DevFlow — Premium Enterprise Design System v3
+   Single Dark Theme. Beautiful. Fast. MNC-Grade.
+   ================================================ */
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ──────────────────────────────────────────────
+   ANIMATIONS  (GPU-accelerated only)
+   ────────────────────────────────────────────── */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+@keyframes ping-dot {
+  0%, 100% { transform: scale(1); opacity: .6; }
+  50%       { transform: scale(1.4); opacity: 1; }
+}
+@keyframes float-orb {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50%       { transform: translateY(-10px) scale(1.02); }
+}
+
+/* ──────────────────────────────────────────────
+   DARK THEME VARIABLES
+   ────────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-root:       #0a0c10;
+  --bg-primary:    #0d111a;
+  --bg-secondary:  #111827;
+  --bg-card:       #131c2e;
+  --bg-elevated:   #1a2540;
+  --bg-hover:      #1e2d45;
+  --bg-input:      #0d111a;
+
+  /* Text */
+  --text-primary:   #e2e8f0;
+  --text-secondary: #8892a4;
+  --text-muted:     #4a5568;
+
+  /* Borders */
+  --border:         #1e2d45;
+  --border-subtle:  #162032;
+  --border-hover:   #2d4a6e;
+
+  /* Brand accent — indigo/violet */
+  --accent:         #6366f1;
+  --accent-light:   #818cf8;
+  --accent-glow:    rgba(99,102,241,.25);
+  --accent-bg:      rgba(99,102,241,.1);
+  --accent-border:  rgba(99,102,241,.3);
+
+  /* Semantic colors */
+  --green:          #22d3a5;
+  --green-bg:       rgba(34,211,165,.1);
+  --green-border:   rgba(34,211,165,.25);
+
+  --amber:          #fbbf24;
+  --amber-bg:       rgba(251,191,36,.1);
+
+  --red:            #f87171;
+  --red-bg:         rgba(248,113,113,.1);
+  --red-border:     rgba(248,113,113,.25);
+
+  --blue:           #60a5fa;
+  --blue-bg:        rgba(96,165,250,.1);
+
+  --purple:         #a78bfa;
+  --purple-bg:      rgba(167,139,250,.1);
+
+  /* Sidebar */
+  --sidebar-width:      240px;
+  --sidebar-collapsed:  64px;
+  --sidebar-bg:         #08080f;
+  --sidebar-border:     rgba(255,255,255,.06);
+  --sidebar-text:       #5c6b80;
+  --sidebar-hover-bg:   rgba(255,255,255,.05);
+  --sidebar-active-bg:  rgba(99,102,241,.15);
+  --sidebar-active-text:#a5b4fc;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 4px rgba(0,0,0,.4);
+  --shadow-md:  0 4px 16px rgba(0,0,0,.5);
+  --shadow-lg:  0 12px 40px rgba(0,0,0,.6);
+  --shadow-accent: 0 4px 20px rgba(99,102,241,.3);
+
+  /* Scrollbar */
+  --sb-thumb: #1e2d45;
+  --sb-hover: #2d4a6e;
+}
+
+/* Light mode — toggle via .light on <html> */
+html.light {
+  --bg-root:       #f1f5f9;
+  --bg-primary:    #ffffff;
+  --bg-secondary:  #f8fafc;
+  --bg-card:       #ffffff;
+  --bg-elevated:   #f1f5f9;
+  --bg-hover:      #e2e8f0;
+  --bg-input:      #ffffff;
+
+  --text-primary:   #0f172a;
+  --text-secondary: #475569;
+  --text-muted:     #94a3b8;
+
+  --border:         #e2e8f0;
+  --border-subtle:  #f1f5f9;
+  --border-hover:   #cbd5e1;
+
+  --accent:         #4f46e5;
+  --accent-light:   #6366f1;
+  --accent-glow:    rgba(79,70,229,.15);
+  --accent-bg:      rgba(79,70,229,.07);
+  --accent-border:  rgba(79,70,229,.2);
+
+  --green:          #059669;
+  --green-bg:       rgba(5,150,105,.07);
+  --green-border:   rgba(5,150,105,.2);
+
+  --amber:          #d97706;
+  --amber-bg:       rgba(217,119,6,.07);
+
+  --red:            #dc2626;
+  --red-bg:         rgba(220,38,38,.07);
+  --red-border:     rgba(220,38,38,.2);
+
+  --blue:           #2563eb;
+  --blue-bg:        rgba(37,99,235,.07);
+
+  --purple:         #7c3aed;
+  --purple-bg:      rgba(124,58,237,.07);
+
+  --sidebar-bg:          #ffffff;
+  --sidebar-border:      #e2e8f0;
+  --sidebar-text:        #64748b;
+  --sidebar-hover-bg:    #f1f5f9;
+  --sidebar-active-bg:   rgba(79,70,229,.08);
+  --sidebar-active-text: #4f46e5;
+
+  --shadow-sm:  0 1px 4px rgba(0,0,0,.06);
+  --shadow-md:  0 4px 16px rgba(0,0,0,.08);
+  --shadow-lg:  0 12px 40px rgba(0,0,0,.12);
+  --shadow-accent: 0 4px 20px rgba(79,70,229,.2);
+
+  --sb-thumb: #cbd5e1;
+  --sb-hover: #94a3b8;
+}
+
+/* ──────────────────────────────────────────────
+   BASE
+   ────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-root);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  transition: background-color .3s ease, color .2s ease;
+}
+
+/* ──────────────────────────────────────────────
+   SCROLLBAR
+   ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--sb-thumb); border-radius: 100px; }
+::-webkit-scrollbar-thumb:hover { background: var(--sb-hover); }
+
+/* ──────────────────────────────────────────────
+   UTILITY CLASSES
+   ────────────────────────────────────────────── */
+
+/* Card */
+.df-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.df-card-hover:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.df-card-glow:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-accent);
+}
+
+/* Sidebar */
+.df-sidebar {
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  transition: width .25s cubic-bezier(.16,1,.3,1), background .3s ease;
+}
+
+/* TopNav */
+.df-topnav {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  transition: background .3s ease, border-color .2s ease;
+}
+
+/* Input */
+.df-input {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.df-input::placeholder { color: var(--text-muted); }
+.df-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+/* Buttons */
+.df-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: all .15s ease;
+}
+.df-btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--shadow-accent);
+}
+.df-btn-primary:hover { filter: brightness(1.12); transform: translateY(-1px); }
+.df-btn-primary:active { transform: translateY(0); }
+
+.df-btn-secondary {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
+}
+.df-btn-secondary:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-hover);
+}
+
+.df-btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1.5px solid var(--border);
+}
+.df-btn-ghost:hover { background: var(--bg-elevated); color: var(--text-primary); }
+
+/* Nav items */
+.df-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease;
+  white-space: nowrap;
+}
+.df-nav-item:hover {
+  background: var(--sidebar-hover-bg);
+  color: var(--text-primary);
+}
+.df-nav-item.active {
+  background: var(--sidebar-active-bg);
+  color: var(--sidebar-active-text);
+  font-weight: 600;
+}
+
+/* Badge */
+.df-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 9px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Progress */
+.df-progress {
+  width: 100%;
+  height: 6px;
+  border-radius: 100px;
+  background: var(--bg-elevated);
+  overflow: hidden;
+}
+.df-progress-bar {
+  height: 100%;
+  border-radius: 100px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--purple) 100%);
+  transition: width .7s cubic-bezier(.16,1,.3,1);
+}
+
+/* Skeleton */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-elevated) 25%,
+    var(--bg-hover) 50%,
+    var(--bg-elevated) 75%
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: 6px;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #6366f1 45%, #22d3a5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Page animations */
+.animate-slide-up { animation: slide-up .35s cubic-bezier(.16,1,.3,1) both; }
+.animate-fade-in  { animation: fade-in .25s ease both; }
+
+/* Glass (for login hero) */
+.glass {
+  background: rgba(255,255,255,.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+/* Icon button */
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.icon-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+/* Ping dot */
+.ping-dot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: ping-dot 1.5s ease-in-out infinite;
+}
+
+/* Section label */
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0 12px;
+  margin-bottom: 4px;
+}
