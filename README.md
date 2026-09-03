@@ -1,607 +1,560 @@
-<![CDATA[<div align="center">
-
 # 🚀 DevFlow
-## ✨ Features
-### 🎯 Project & Task Management
-- **Multi-Project Workspace** — Create and manage unlimited projects with status tracking (Planning → Active → Completed → Archived)
-- **Drag-and-Drop Kanban Board** — Intuitive task management with `@dnd-kit` powered Kanban columns (TODO → IN_PROGRESS → IN_REVIEW → DONE)
-- **Task Assignment & Prioritization** — Assign tasks to team members with priority levels (Low / Medium / High / Urgent)
-- **Due Date Tracking** — Visual overdue indicators with estimated hours tracking
-- **Tagging System** — Color-coded tags for task categorization and filtering
-- **Task Comments** — Threaded comments on tasks for team collaboration
+
+### AI-Powered Project Management for Modern Teams
+
+> **Plan smarter. Collaborate better. Ship faster.**
+
+DevFlow is a modern, full-stack project management platform designed to help teams organize projects, manage tasks, collaborate in real time, track progress, and leverage AI to turn ideas into actionable work.
+
+Built with **React, TypeScript, Node.js, Express, PostgreSQL/MySQL, and OpenAI**, DevFlow combines a powerful backend with a sleek, responsive interface.
+
+---
+
+## ✨ Why DevFlow?
+
+Managing projects shouldn't mean jumping between multiple tools.
+
+DevFlow brings **projects, tasks, teams, analytics, collaboration, and AI assistance** into one unified workspace.
+
+### 🎯 Everything your team needs
+
+* 📁 **Project Management** — Create, organize, and track multiple projects
+* 📋 **Kanban Boards** — Manage tasks with intuitive drag-and-drop workflows
+* 🤖 **AI Assistant** — Generate descriptions, subtasks, and project summaries
+* 📊 **Analytics Dashboard** — Monitor KPIs, progress, activity, and overdue work
+* 👥 **Team Collaboration** — Manage members, roles, comments, and notifications
+* 🔐 **Secure Authentication** — JWT-based authentication with role-based access
+* 🌙 **Modern Dark UI** — Clean, responsive, enterprise-inspired interface
+* ⚡ **Fast & Scalable** — Modern frontend and structured backend architecture
+
+---
+
+## 🌟 Features
+
+### 📌 Project & Task Management
+
+* Multi-project workspace
+* Project lifecycle tracking
+* Drag-and-drop Kanban board
+* Task assignment
+* Priority management
+* Due-date tracking
+* Estimated hours
+* Color-coded tags
+* Task comments
+* Task filtering
 
 ### 🤖 AI-Powered Assistant
-- **Auto-Generated Task Descriptions** — AI writes detailed task descriptions from titles using OpenAI GPT
-- **Smart Subtask Breakdown** — Automatically decompose complex tasks into actionable subtasks
-- **Project Status Summaries** — AI-generated standup-ready project progress reports
-- **Graceful Fallback** — Full functionality without an API key; AI features enhance but don't block workflows
+
+Turn a simple task title into meaningful, actionable work.
+
+**AI capabilities include:**
+
+* ✨ Automatic task description generation
+* 🧩 Smart subtask breakdown
+* 📈 AI-generated project summaries
+* 🟢 AI service status monitoring
+* 🛡️ Graceful fallback when no API key is configured
+
+> AI features are optional — DevFlow remains fully usable without an OpenAI API key.
 
 ### 📊 Analytics Dashboard
-- **Executive KPI Cards** — Active projects, assigned tasks, pending items, and overdue alerts at a glance
-- **Sprint Completion Tracking** — Real-time progress bar with completion percentage
-- **Live Activity Feed** — Real-time log of team actions across all projects
-- **User Session Info** — Quick access to role, email, and system status
+
+Get a quick overview of your team's productivity.
+
+* Active projects
+* Assigned tasks
+* Pending tasks
+* Overdue tasks
+* Sprint completion percentage
+* Team activity feed
+* User session information
 
 ### 🔐 Authentication & Security
-- **JWT Authentication** — Access tokens (15min) + refresh tokens (7 days) with httpOnly cookie support
-- **Password Hashing** — bcrypt-based secure password storage
-- **Role-Based Access** — User roles: `ADMIN`, `PROJECT_MANAGER`, `DEVELOPER`, `VIEWER`
-- **Rate Limiting** — Configurable API rate limiting to prevent abuse
-- **Helmet.js** — HTTP security headers out of the box
-- **Input Validation** — Zod-powered request validation on all endpoints
 
-### 🎨 Premium UI/UX
-- **Dark Mode First** — Sleek, enterprise-grade dark interface with theme switching support
-- **Responsive Design** — Fully responsive sidebar layout with collapsible navigation
-- **Micro-Animations** — Smooth transitions, hover effects, and skeleton loading states
-- **Modern Typography** — Plus Jakarta Sans + JetBrains Mono font pairing
-- **Toast Notifications** — Non-intrusive feedback with `react-hot-toast`
+Security is built into the backend from the ground up.
 
-### 👥 Team Management
-- **Project Members** — Add/remove team members with role-based permissions per project
-- **User Profiles** — Profile management with avatar support
-- **Notification System** — In-app notifications for task assignments, comments, and project updates
+* JWT access & refresh tokens
+* HTTP-only cookie support
+* bcrypt password hashing
+* Role-based access control
+* API rate limiting
+* Helmet security headers
+* Zod request validation
+* Protected API routes
 
----
+**Supported roles:**
 
-## 🛠️ Tech Stack
+`ADMIN` · `PROJECT_MANAGER` · `DEVELOPER` · `VIEWER`
 
-### Frontend
-| Technology | Purpose |
-|---|---|
-| **React 19** | UI framework with latest concurrent features |
-| **TypeScript** | Type-safe development |
-| **Vite 8** | Lightning-fast build tool & dev server |
-| **Tailwind CSS 4** | Utility-first styling |
-| **React Router v7** | Client-side routing with protected routes |
-| **Zustand** | Lightweight state management |
-| **@dnd-kit** | Drag-and-drop Kanban interactions |
-| **Recharts** | Data visualization & charting |
-| **Lucide React** | Modern icon library |
-| **Axios** | HTTP client for API communication |
-| **date-fns** | Date utility library |
+### 👥 Team Collaboration
 
-### Backend
-| Technology | Purpose |
-|---|---|
-| **Node.js + Express 4** | REST API server |
-| **TypeScript** | Type-safe server logic |
-| **Knex.js** | SQL query builder & migrations |
-| **PostgreSQL / MySQL** | Relational database (dual support) |
-| **JSON Web Tokens** | Stateless authentication |
-| **bcryptjs** | Password hashing |
-| **Zod** | Runtime schema validation |
-| **Helmet** | HTTP security headers |
-| **Morgan** | HTTP request logging |
-| **OpenAI API** | AI-powered features (optional) |
+* Project member management
+* Role-based project permissions
+* User profiles
+* Avatar support
+* Task comments
+* Activity tracking
+* In-app notifications
+
+### 🎨 Modern UI/UX
+
+* 🌙 Dark-mode-first design
+* 📱 Fully responsive layout
+* 🎬 Smooth micro-animations
+* 💀 Skeleton loading states
+* 🔔 Toast notifications
+* ✨ Modern typography
+* 🧭 Responsive sidebar navigation
 
 ---
 
-## 🚀 Getting Started
+# 🛠️ Tech Stack
 
-### Prerequisites
+## Frontend
 
-- **Node.js** ≥ 18.x
-- **npm** ≥ 9.x
-- **PostgreSQL** ≥ 14 (or MySQL 8.0+)
+| Technology             | Purpose                         |
+| ---------------------- | ------------------------------- |
+| ⚛️ **React 19**        | UI framework                    |
+| 🔷 **TypeScript**      | Type-safe development           |
+| ⚡ **Vite 8**           | Build tool & development server |
+| 🎨 **Tailwind CSS 4**  | Styling                         |
+| 🧭 **React Router v7** | Client-side routing             |
+| 🐻 **Zustand**         | State management                |
+| 🖱️ **@dnd-kit**       | Drag-and-drop interactions      |
+| 📊 **Recharts**        | Data visualization              |
+| 🎯 **Lucide React**    | Icon library                    |
+| 🌐 **Axios**           | HTTP client                     |
+| 📅 **date-fns**        | Date utilities                  |
 
-### 1. Clone the Repository
+## Backend
 
-```bash
-git clone https://github.com/yourusername/devflow.git
-cd devflow
-```
+| Technology        | Purpose                        |
+| ----------------- | ------------------------------ |
+| 🟢 **Node.js**    | Runtime                        |
+| 🚂 **Express 4**  | REST API framework             |
+| 🔷 **TypeScript** | Type-safe server logic         |
+| 🗄️ **Knex.js**   | SQL query builder & migrations |
+| 🐘 **PostgreSQL** | Relational database            |
+| 🐬 **MySQL**      | Alternative database support   |
+| 🔑 **JWT**        | Authentication                 |
+| 🔐 **bcryptjs**   | Password hashing               |
+| ✅ **Zod**         | Runtime validation             |
+| 🛡️ **Helmet**    | HTTP security                  |
+| 📝 **Morgan**     | Request logging                |
+| 🤖 **OpenAI API** | AI capabilities                |
 
-### 2. Backend Setup
+---
 
-```bash
-# Navigate to backend
-cd backend
+# 🏗️ Architecture
 
-# Install dependencies
-npm install
-
-# Create environment file
-cp .env.example .env
-```
-
-Edit `.env` with your configuration:
-
-```env
-# Server
-PORT=5000
-NODE_ENV=development
-
-# Database (PostgreSQL)
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=devflow
-DB_USER=postgres
-DB_PASSWORD=your_password_here
-
-# JWT Secrets (change these in production!)
-JWT_SECRET=your-super-secret-jwt-key-change-in-production
-JWT_REFRESH_SECRET=your-super-secret-refresh-key-change-in-production
-JWT_EXPIRES_IN=15m
-JWT_REFRESH_EXPIRES_IN=7d
-
-# AI (Optional — app works fully without this)
-OPENAI_API_KEY=
-
-# CORS
-CORS_ORIGIN=http://localhost:5173
-
-# Rate Limiting
-RATE_LIMIT_WINDOW_MS=900000
-RATE_LIMIT_MAX_REQUESTS=100
-```
-
-```bash
-# Create the database
-psql -U postgres -c "CREATE DATABASE devflow;"
-
-# Run migrations
-npm run migrate
-
-# (Optional) Seed sample data
-npm run seed
-
-# Start the development server
-npm run dev
-```
-
-The API server will start at **http://localhost:5000**
-
-### 3. Frontend Setup
-
-```bash
-# Navigate to frontend (from project root)
-cd frontend
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
-```
-
-The application will open at **http://localhost:5173**
-
-### 4. Verify Setup
-
-Visit the health check endpoint to confirm the backend is running:
-
-```bash
-curl http://localhost:5000/api/health
-```
-
-Expected response:
-```json
-{
-  "success": true,
-  "message": "DevFlow API is running",
-  "timestamp": "2026-09-03T09:30:00.000Z",
-  "environment": "development"
-}
+```text
+                         ┌─────────────────────┐
+                         │      BROWSER        │
+                         │                     │
+                         │ React 19            │
+                         │ Zustand             │
+                         │ React Router        │
+                         │ Tailwind CSS        │
+                         └──────────┬──────────┘
+                                    │
+                              REST API / HTTP
+                                    │
+                         ┌──────────▼──────────┐
+                         │    EXPRESS API      │
+                         │                     │
+                         │ Authentication      │
+                         │ Projects            │
+                         │ Tasks               │
+                         │ Comments            │
+                         │ Notifications       │
+                         │ Analytics           │
+                         │ AI                  │
+                         └──────────┬──────────┘
+                                    │
+                         ┌──────────▼──────────┐
+                         │ SERVICE / REPOSITORY│
+                         │       LAYER         │
+                         └──────────┬──────────┘
+                                    │
+                              Knex.js / SQL
+                                    │
+                    ┌───────────────▼───────────────┐
+                    │          DATABASE             │
+                    │                               │
+                    │ PostgreSQL / MySQL             │
+                    │ Users • Projects • Tasks       │
+                    │ Comments • Activity • Tags     │
+                    │ Notifications                  │
+                    └───────────────────────────────┘
+                                    │
+                         ┌──────────▼──────────┐
+                         │    OpenAI API       │
+                         │     (Optional)      │
+                         └─────────────────────┘
 ```
 
 ---
 
-## 📡 API Documentation
+# 📁 Project Structure
 
-### Base URL
-```
-http://localhost:5000/api
-```
-
-### Authentication Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/auth/register` | Register a new user |
-| `POST` | `/auth/login` | Login and receive JWT tokens |
-| `POST` | `/auth/refresh` | Refresh access token |
-| `POST` | `/auth/logout` | Logout and invalidate refresh token |
-
-### User Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/users/me` | Get current user profile |
-| `PUT` | `/users/me` | Update current user profile |
-| `GET` | `/users` | List all users (Admin) |
-
-### Project Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/projects` | List all projects for the user |
-| `POST` | `/projects` | Create a new project |
-| `GET` | `/projects/:id` | Get project details |
-| `PUT` | `/projects/:id` | Update a project |
-| `DELETE` | `/projects/:id` | Delete a project |
-| `POST` | `/projects/:id/members` | Add a member to a project |
-| `DELETE` | `/projects/:id/members/:userId` | Remove a member |
-| `GET` | `/projects/:id/members` | List project members |
-
-### Task Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/tasks` | List tasks (with filters) |
-| `POST` | `/tasks` | Create a new task |
-| `GET` | `/tasks/:id` | Get task details |
-| `PUT` | `/tasks/:id` | Update a task |
-| `PATCH` | `/tasks/:id/status` | Update task status (Kanban move) |
-| `DELETE` | `/tasks/:id` | Delete a task |
-
-### Comment Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/comments?taskId=:id` | List comments for a task |
-| `POST` | `/comments` | Add a comment to a task |
-| `DELETE` | `/comments/:id` | Delete a comment |
-
-### Notification Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/notifications` | List user notifications |
-| `PATCH` | `/notifications/:id/read` | Mark notification as read |
-| `PATCH` | `/notifications/read-all` | Mark all as read |
-
-### AI Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/ai/generate-description` | AI-generate a task description |
-| `POST` | `/ai/generate-subtasks` | AI-generate subtask breakdown |
-| `POST` | `/ai/project-summary` | AI-generate project summary |
-| `GET` | `/ai/status` | Check AI service status |
-
-### Analytics Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/analytics/dashboard` | Dashboard KPI statistics |
-
-> **Note:** All endpoints except `/auth/register`, `/auth/login`, and `/api/health` require a valid JWT in the `Authorization: Bearer <token>` header.
-
----
-
-## 🗄️ Database Schema
-
-The application uses a relational database with the following entity structure:
-
-```mermaid
-erDiagram
-    USERS {
-        CHAR_36 id PK
-        VARCHAR email UK
-        VARCHAR password_hash
-        VARCHAR first_name
-        VARCHAR last_name
-        VARCHAR role
-        VARCHAR avatar_url
-        BOOLEAN is_active
-        TIMESTAMP created_at
-        TIMESTAMP updated_at
-    }
-
-    PROJECTS {
-        CHAR_36 id PK
-        VARCHAR name
-        TEXT description
-        VARCHAR status
-        VARCHAR priority
-        DATE start_date
-        DATE deadline
-        CHAR_36 created_by FK
-        TIMESTAMP created_at
-        TIMESTAMP updated_at
-    }
-
-    PROJECT_MEMBERS {
-        CHAR_36 id PK
-        CHAR_36 project_id FK
-        CHAR_36 user_id FK
-        VARCHAR role
-        TIMESTAMP joined_at
-    }
-
-    TASKS {
-        CHAR_36 id PK
-        VARCHAR title
-        TEXT description
-        CHAR_36 project_id FK
-        CHAR_36 assigned_to FK
-        CHAR_36 created_by FK
-        VARCHAR priority
-        VARCHAR status
-        DATE due_date
-        DECIMAL estimated_hours
-        TIMESTAMP created_at
-        TIMESTAMP updated_at
-    }
-
-    TAGS {
-        CHAR_36 id PK
-        VARCHAR name UK
-        VARCHAR color
-    }
-
-    TASK_TAGS {
-        CHAR_36 task_id FK
-        CHAR_36 tag_id FK
-    }
-
-    COMMENTS {
-        CHAR_36 id PK
-        CHAR_36 task_id FK
-        CHAR_36 user_id FK
-        TEXT content
-        TIMESTAMP created_at
-        TIMESTAMP updated_at
-    }
-
-    ACTIVITY_LOGS {
-        CHAR_36 id PK
-        CHAR_36 project_id FK
-        CHAR_36 task_id FK
-        CHAR_36 user_id FK
-        VARCHAR action
-        JSON details
-        TIMESTAMP created_at
-    }
-
-    NOTIFICATIONS {
-        CHAR_36 id PK
-        CHAR_36 user_id FK
-        VARCHAR type
-        VARCHAR title
-        TEXT message
-        CHAR_36 reference_id
-        BOOLEAN is_read
-        TIMESTAMP created_at
-    }
-
-    USERS ||--o{ PROJECTS : creates
-    USERS ||--o{ PROJECT_MEMBERS : belongs_to
-    PROJECTS ||--o{ PROJECT_MEMBERS : has
-    PROJECTS ||--o{ TASKS : contains
-    USERS ||--o{ TASKS : assigned_to
-    TASKS ||--o{ TASK_TAGS : has
-    TAGS ||--o{ TASK_TAGS : categorizes
-    TASKS ||--o{ COMMENTS : has
-    USERS ||--o{ COMMENTS : writes
-    PROJECTS ||--o{ ACTIVITY_LOGS : logs
-    USERS ||--o{ NOTIFICATIONS : receives
-```
-
----
-
-## 📁 Project Structure
-
-```
+```text
 devflow/
-├── backend/                    # Express.js REST API
+│
+├── backend/
 │   ├── src/
-│   │   ├── config/             # Environment & database configuration
-│   │   │   ├── database.ts     # Knex database connection
-│   │   │   ├── env.ts          # Environment variable validation
-│   │   │   └── knexfile.ts     # Knex migration config
-│   │   ├── controllers/        # Route handlers (business logic)
-│   │   │   ├── auth.controller.ts
-│   │   │   ├── project.controller.ts
-│   │   │   ├── task.controller.ts
-│   │   │   ├── comment.controller.ts
-│   │   │   ├── notification.controller.ts
-│   │   │   └── analytics.controller.ts
-│   │   ├── integrations/       # Third-party service integrations
-│   │   │   └── ai.service.ts   # OpenAI GPT integration
-│   │   ├── middleware/         # Express middleware
-│   │   │   ├── auth.ts         # JWT authentication guard
-│   │   │   ├── errorHandler.ts # Global error handler
-│   │   │   └── validate.ts     # Zod validation middleware
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── integrations/
+│   │   ├── middleware/
 │   │   ├── models/
-│   │   │   ├── migrations/     # Database migration files
-│   │   │   └── seeds/          # Seed data for development
-│   │   ├── repositories/       # Data access layer
-│   │   ├── routes/             # Express route definitions
-│   │   │   ├── auth.routes.ts
-│   │   │   ├── project.routes.ts
-│   │   │   ├── task.routes.ts
-│   │   │   ├── comment.routes.ts
-│   │   │   ├── notification.routes.ts
-│   │   │   ├── analytics.routes.ts
-│   │   │   ├── ai.routes.ts
-│   │   │   └── user.routes.ts
-│   │   ├── services/           # Business logic services
-│   │   ├── types/              # TypeScript type definitions
-│   │   ├── utils/              # Utility functions & logger
-│   │   ├── validators/         # Zod request schemas
-│   │   ├── app.ts              # Express app factory
-│   │   ├── server.ts           # Server entry point
-│   │   ├── migrate.ts          # Migration runner script
-│   │   └── seed.ts             # Seed runner script
-│   ├── .env.example            # Environment template
+│   │   ├── repositories/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   ├── types/
+│   │   ├── utils/
+│   │   ├── validators/
+│   │   ├── app.ts
+│   │   ├── server.ts
+│   │   ├── migrate.ts
+│   │   └── seed.ts
+│   │
+│   ├── .env.example
 │   ├── package.json
 │   └── tsconfig.json
 │
-├── frontend/                   # React SPA
-│   ├── public/                 # Static assets
-│   │   ├── favicon.svg
-│   │   └── icons.svg
+├── frontend/
+│   ├── public/
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── layout/         # App shell components
-│   │   │   │   ├── AppLayout.tsx
-│   │   │   │   ├── Sidebar.tsx
-│   │   │   │   ├── TopNav.tsx
-│   │   │   │   └── ProtectedRoute.tsx
-│   │   │   └── ui/             # Reusable UI primitives
-│   │   │       ├── Button.tsx
-│   │   │       ├── Card.tsx
-│   │   │       ├── Input.tsx
-│   │   │       ├── Modal.tsx
-│   │   │       ├── Badge.tsx
-│   │   │       ├── Skeleton.tsx
-│   │   │       └── EmptyState.tsx
-│   │   ├── hooks/              # Custom React hooks
-│   │   ├── lib/                # Shared utilities
-│   │   ├── pages/              # Route-level page components
-│   │   │   ├── LandingPage.tsx
-│   │   │   ├── LoginPage.tsx
-│   │   │   ├── RegisterPage.tsx
-│   │   │   ├── DashboardPage.tsx
-│   │   │   ├── ProjectsPage.tsx
-│   │   │   ├── ProjectDetailsPage.tsx
-│   │   │   ├── MyTasksPage.tsx
-│   │   │   ├── GlobalKanbanPage.tsx
-│   │   │   ├── AIAssistantPage.tsx
-│   │   │   ├── TeamPage.tsx
-│   │   │   ├── AnalyticsPage.tsx
-│   │   │   ├── NotificationsPage.tsx
-│   │   │   └── ProfilePage.tsx
-│   │   ├── services/           # API service layer
-│   │   ├── store/              # Zustand state stores
-│   │   │   ├── authStore.ts
-│   │   │   ├── projectStore.ts
-│   │   │   ├── taskStore.ts
-│   │   │   └── themeStore.ts
-│   │   ├── types/              # TypeScript interfaces
-│   │   ├── utils/              # Utility functions
-│   │   ├── App.tsx             # Root component with routing
-│   │   ├── main.tsx            # Application entry point
-│   │   └── index.css           # Global styles & design tokens
-│   ├── index.html              # HTML template
+│   │   ├── hooks/
+│   │   ├── lib/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── store/
+│   │   ├── types/
+│   │   ├── utils/
+│   │   ├── App.tsx
+│   │   ├── main.tsx
+│   │   └── index.css
+│   │
+│   ├── index.html
 │   ├── package.json
 │   ├── tsconfig.json
-│   └── vite.config.ts          # Vite build configuration
+│   └── vite.config.ts
 │
 └── README.md
 ```
 
 ---
 
-## 🧪 Available Scripts
+# 🚀 Getting Started
 
-### Backend
+## Prerequisites
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server with hot-reload (tsx watch) |
-| `npm run build` | Compile TypeScript to JavaScript |
-| `npm start` | Run the production build |
-| `npm run migrate` | Run database migrations |
-| `npm run migrate:rollback` | Rollback the last migration batch |
-| `npm run seed` | Seed the database with sample data |
-| `npm test` | Run tests with Vitest |
-| `npm run lint` | Lint source code with ESLint |
+Make sure you have installed:
 
-### Frontend
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start Vite dev server (port 5173) |
-| `npm run build` | TypeScript check + production build |
-| `npm run preview` | Preview the production build locally |
+* **Node.js ≥ 18**
+* **npm ≥ 9**
+* **PostgreSQL ≥ 14** or **MySQL 8+**
 
 ---
 
-## 🔧 Configuration
+## 1️⃣ Clone the Repository
 
-### Environment Variables
-
-| Variable | Default | Required | Description |
-|----------|---------|----------|-------------|
-| `PORT` | `5000` | No | API server port |
-| `NODE_ENV` | `development` | No | Environment mode |
-| `DB_HOST` | `localhost` | Yes | Database hostname |
-| `DB_PORT` | `5432` | Yes | Database port |
-| `DB_NAME` | `devflow` | Yes | Database name |
-| `DB_USER` | `postgres` | Yes | Database username |
-| `DB_PASSWORD` | — | Yes | Database password |
-| `JWT_SECRET` | — | Yes | JWT signing secret |
-| `JWT_REFRESH_SECRET` | — | Yes | Refresh token secret |
-| `JWT_EXPIRES_IN` | `15m` | No | Access token TTL |
-| `JWT_REFRESH_EXPIRES_IN` | `7d` | No | Refresh token TTL |
-| `OPENAI_API_KEY` | — | No | OpenAI key for AI features |
-| `CORS_ORIGIN` | `http://localhost:5173` | No | Allowed CORS origin |
-| `RATE_LIMIT_WINDOW_MS` | `900000` | No | Rate limit window (ms) |
-| `RATE_LIMIT_MAX_REQUESTS` | `100` | No | Max requests per window |
-
-### Vite Proxy
-
-The frontend dev server automatically proxies `/api` requests to `http://localhost:5000`, so no separate CORS configuration is needed during development.
-
----
-
-## 🏗️ Architecture
-
-```
-┌──────────────────────────────────────────────────────────┐
-│                    CLIENT (Browser)                       │
-│  React 19 + Zustand + React Router + TailwindCSS 4       │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐    │
-│  │ Landing  │ │Dashboard │ │ Kanban   │ │ AI Asst  │    │
-│  │  Page    │ │  Page    │ │  Board   │ │  Page    │    │
-│  └──────────┘ └──────────┘ └──────────┘ └──────────┘    │
-└─────────────────────┬────────────────────────────────────┘
-                      │ HTTP (REST API)
-                      │ Vite Proxy → :5000
-┌─────────────────────▼────────────────────────────────────┐
-│                  API SERVER (Express)                     │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐    │
-│  │  Auth    │ │ Project  │ │  Task    │ │   AI     │    │
-│  │ Routes   │ │ Routes   │ │ Routes   │ │ Routes   │    │
-│  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘    │
-│       │             │            │             │          │
-│  ┌────▼─────────────▼────────────▼─────────────▼────┐    │
-│  │              Middleware Layer                      │    │
-│  │  JWT Auth │ Validation │ Rate Limit │ Error Handler│   │
-│  └────────────────────┬──────────────────────────────┘    │
-│                       │                                    │
-│  ┌────────────────────▼──────────────────────────────┐    │
-│  │            Repository / Service Layer              │    │
-│  └────────────────────┬──────────────────────────────┘    │
-└───────────────────────┼──────────────────────────────────┘
-                        │ Knex.js Query Builder
-┌───────────────────────▼──────────────────────────────────┐
-│               DATABASE (PostgreSQL / MySQL)                │
-│  Users │ Projects │ Tasks │ Comments │ Activity │ Notifs  │
-└──────────────────────────────────────────────────────────┘
-                        │
-┌───────────────────────▼──────────────────────────────────┐
-│             EXTERNAL SERVICES (Optional)                  │
-│                   OpenAI GPT API                          │
-└──────────────────────────────────────────────────────────┘
+```bash
+git clone https://github.com/Govindmv1/devflow.git
+cd devflow
 ```
 
 ---
 
-## 🤝 Contributing
+## 2️⃣ Backend Setup
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+```bash
+cd backend
+npm install
+```
+
+Create your environment file:
+
+```bash
+cp .env.example .env
+```
+
+Configure your `.env`:
+
+```env
+PORT=5000
+NODE_ENV=development
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=devflow
+DB_USER=postgres
+DB_PASSWORD=your_password_here
+
+JWT_SECRET=your-super-secret-jwt-key
+JWT_REFRESH_SECRET=your-super-secret-refresh-key
+
+JWT_EXPIRES_IN=15m
+JWT_REFRESH_EXPIRES_IN=7d
+
+OPENAI_API_KEY=
+
+CORS_ORIGIN=http://localhost:5173
+
+RATE_LIMIT_WINDOW_MS=900000
+RATE_LIMIT_MAX_REQUESTS=100
+```
+
+Create the database:
+
+```bash
+psql -U postgres -c "CREATE DATABASE devflow;"
+```
+
+Run migrations:
+
+```bash
+npm run migrate
+```
+
+Optional sample data:
+
+```bash
+npm run seed
+```
+
+Start the backend:
+
+```bash
+npm run dev
+```
+
+Backend:
+
+```text
+http://localhost:5000
+```
 
 ---
 
-## 📄 License
+## 3️⃣ Frontend Setup
 
-This project is licensed under the ISC License. See the [LICENSE](LICENSE) file for details.
+From the project root:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend:
+
+```text
+http://localhost:5173
+```
 
 ---
 
-<div align="center">
+## 4️⃣ Verify the API
 
-**Built with ❤️ by the DevFlow Team**
+```bash
+curl http://localhost:5000/api/health
+```
 
-<sub>Enterprise Project Management • AI-Powered Workflows • Built for Scale</sub>
+Expected:
 
-</div>
-]]>
+```json
+{
+  "success": true,
+  "message": "DevFlow API is running"
+}
+```
+
+---
+
+# 📡 API Overview
+
+### Authentication
+
+| Method | Endpoint         | Description          |
+| ------ | ---------------- | -------------------- |
+| POST   | `/auth/register` | Register user        |
+| POST   | `/auth/login`    | Login                |
+| POST   | `/auth/refresh`  | Refresh access token |
+| POST   | `/auth/logout`   | Logout               |
+
+### Projects
+
+| Method | Endpoint                        | Description    |
+| ------ | ------------------------------- | -------------- |
+| GET    | `/projects`                     | List projects  |
+| POST   | `/projects`                     | Create project |
+| GET    | `/projects/:id`                 | Get project    |
+| PUT    | `/projects/:id`                 | Update project |
+| DELETE | `/projects/:id`                 | Delete project |
+| POST   | `/projects/:id/members`         | Add member     |
+| DELETE | `/projects/:id/members/:userId` | Remove member  |
+
+### Tasks
+
+| Method | Endpoint            | Description        |
+| ------ | ------------------- | ------------------ |
+| GET    | `/tasks`            | List tasks         |
+| POST   | `/tasks`            | Create task        |
+| GET    | `/tasks/:id`        | Get task           |
+| PUT    | `/tasks/:id`        | Update task        |
+| PATCH  | `/tasks/:id/status` | Change task status |
+| DELETE | `/tasks/:id`        | Delete task        |
+
+### AI
+
+| Method | Endpoint                   | Description               |
+| ------ | -------------------------- | ------------------------- |
+| POST   | `/ai/generate-description` | Generate task description |
+| POST   | `/ai/generate-subtasks`    | Generate subtasks         |
+| POST   | `/ai/project-summary`      | Generate project summary  |
+| GET    | `/ai/status`               | Check AI status           |
+
+### Analytics
+
+| Method | Endpoint               | Description          |
+| ------ | ---------------------- | -------------------- |
+| GET    | `/analytics/dashboard` | Dashboard statistics |
+
+> 🔐 All endpoints except registration, login, and health check require JWT authentication.
+
+---
+
+# 🗄️ Database
+
+DevFlow uses a relational database architecture supporting **PostgreSQL and MySQL**.
+
+Core entities include:
+
+```text
+Users
+  │
+  ├── Projects
+  │      │
+  │      ├── Project Members
+  │      ├── Tasks
+  │      │     ├── Tags
+  │      │     └── Comments
+  │      │
+  │      └── Activity Logs
+  │
+  └── Notifications
+```
+
+---
+
+# 🧪 Available Scripts
+
+## Backend
+
+| Command                    | Description         |
+| -------------------------- | ------------------- |
+| `npm run dev`              | Development server  |
+| `npm run build`            | Build TypeScript    |
+| `npm start`                | Production server   |
+| `npm run migrate`          | Run migrations      |
+| `npm run migrate:rollback` | Rollback migrations |
+| `npm run seed`             | Seed database       |
+| `npm test`                 | Run tests           |
+| `npm run lint`             | Run ESLint          |
+
+## Frontend
+
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `npm run dev`     | Start Vite server        |
+| `npm run build`   | Production build         |
+| `npm run preview` | Preview production build |
+
+---
+
+# 🔧 Environment Variables
+
+| Variable                  | Required | Default                 |
+| ------------------------- | -------- | ----------------------- |
+| `PORT`                    | ❌        | `5000`                  |
+| `NODE_ENV`                | ❌        | `development`           |
+| `DB_HOST`                 | ✅        | `localhost`             |
+| `DB_PORT`                 | ✅        | `5432`                  |
+| `DB_NAME`                 | ✅        | `devflow`               |
+| `DB_USER`                 | ✅        | `postgres`              |
+| `DB_PASSWORD`             | ✅        | —                       |
+| `JWT_SECRET`              | ✅        | —                       |
+| `JWT_REFRESH_SECRET`      | ✅        | —                       |
+| `JWT_EXPIRES_IN`          | ❌        | `15m`                   |
+| `JWT_REFRESH_EXPIRES_IN`  | ❌        | `7d`                    |
+| `OPENAI_API_KEY`          | ❌        | —                       |
+| `CORS_ORIGIN`             | ❌        | `http://localhost:5173` |
+| `RATE_LIMIT_WINDOW_MS`    | ❌        | `900000`                |
+| `RATE_LIMIT_MAX_REQUESTS` | ❌        | `100`                   |
+
+---
+
+# 🛡️ Security
+
+DevFlow follows several backend security practices:
+
+* 🔐 JWT authentication
+* 🔑 Secure password hashing
+* 🍪 HTTP-only refresh-token cookies
+* 👮 Role-based authorization
+* 🛡️ Helmet security headers
+* 🚦 Rate limiting
+* ✅ Request validation with Zod
+* 🚫 Protected API routes
+
+> Never commit your `.env` file or production secrets to GitHub.
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+### 1. Fork the repository
+
+### 2. Create a feature branch
+
+```bash
+git checkout -b feature/amazing-feature
+```
+
+### 3. Commit your changes
+
+```bash
+git commit -m "Add amazing feature"
+```
+
+### 4. Push your branch
+
+```bash
+git push origin feature/amazing-feature
+```
+
+### 5. Open a Pull Request
+
+---
+
+# 📄 License
+
+This project is licensed under the **ISC License**.
+
+See the `LICENSE` file for details.
+
+---
+
+## 👨‍💻 Built with ❤️
+
+**DevFlow Team**
+
+> Enterprise Project Management • AI-Powered Workflows • Built for Scale
+
+⭐ **If you find DevFlow useful, consider giving the repository a star!**
