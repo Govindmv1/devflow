@@ -2,7 +2,6 @@
 
 # 🚀 DevFlow
 ## ✨ Features
-
 ### 🎯 Project & Task Management
 - **Multi-Project Workspace** — Create and manage unlimited projects with status tracking (Planning → Active → Completed → Archived)
 - **Drag-and-Drop Kanban Board** — Intuitive task management with `@dnd-kit` powered Kanban columns (TODO → IN_PROGRESS → IN_REVIEW → DONE)
